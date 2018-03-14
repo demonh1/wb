@@ -6,13 +6,13 @@
 #define DP_HEXCHAR_CHAR     0x00000001
 #define DP_HEXCHAR_BYTE     0x00000002
 
-MQMD2 DefaultMqmd = { MQMD2_DEFAULT };                           /*@1C*/
+MQMD2 DefaultMqmd = { MQMD2_DEFAULT };
 
 #define CSOFFSETOF(s,c) (int)(ptrdiff_t)&(((s *)0)->c)
 
 typedef struct _FLD
 {
-  int    Type;                         /* FT_*                        */
+  int    Type; 
   int    Offset;
   int    Length;
   int    Version;
@@ -58,7 +58,8 @@ FLD Flds[] = {
 { 0      , 0                                , 0, 0,""   ,""}
 };
 
-///////
+///////////////////////////////////////////////////////
+
 size_t split(const std::string& src, const std::string& delim, std::set<std::string>& parts){
     parts.clear();
 
@@ -84,8 +85,9 @@ size_t split(const std::string& src, const std::string& delim, std::set<std::str
 		parts.insert(strCurrent);
     }
     return parts.size();
-	}
-//////////
+}
+
+///////////////////////////////////////////////////////
 
 bool process(const char* filename, ImgMsg& msg ) 
 {
@@ -119,5 +121,3 @@ bool process(const char* filename, ImgMsg& msg )
 		}
     return true;
 }
-
-//
